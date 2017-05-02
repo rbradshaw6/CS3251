@@ -1,0 +1,71 @@
+Client:
+
+[cmiller86@networklab3 bin]$ java ReldatClient 130.207.107.15:4037 5
+Attempting to connect to 130.207.107.15:4037...
+Connection established.
+> transform ../src/test_file.txt
+Sending data.
+Sending data.
+Sending data.
+Sending data.
+Received ACK 4
+Sending data.
+Received ACK 1
+Received ACK 2
+Received ACK 3
+Received ACK 4
+No more data to send - sending EOD.
+Received data.
+Acknowledging received SEQ 1.
+Received data.
+Acknowledging received SEQ 3.
+Received data.
+Acknowledging received SEQ 2.
+Received ACK 5
+Received data.
+Acknowledging received SEQ 0.
+Acknowledging received SEQ 4.
+Created filed with transformed data: ../src/test_file-received.txt
+> disconnect
+Attempting to disconnect from /130.207.107.15:4037...
+Connection terminated.
+
+Server:
+
+[cmiller86@networklab4 server]$ ./reldat-server.py 4037 5
+Listening on port 4037.
+Attempting to establish connection with 130.207.107.14:4037...
+Connection established.
+Nudging client.
+Received acknowledgement.
+Nudging client.
+Re-sending unacknowledged data.
+Received acknowledgement.
+Nudging client.
+Received acknowledgement.
+Received data.
+Acknowledging received SEQ 3.
+Received data.
+Acknowledging received SEQ 1.
+Received data.
+Acknowledging received SEQ 4.
+Received data.
+Acknowledging received SEQ 2.
+Received data.
+Acknowledging received SEQ 4.
+Received all data from client.
+Acknowledging EOD.
+Sending back data.
+Sending back data.
+Sending back data.
+Sending back data.
+Received acknowledgement.
+Received acknowledgement.
+Received acknowledgement.
+Received acknowledgement.
+Received acknowledgement.
+Nudging client.
+Received acknowledgement.
+Nudging client.
+Attempting to disconnect from ('130.207.107.14', 4037):4037...
+Disconnected.

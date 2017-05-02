@@ -1,0 +1,5 @@
+Output (using the included suspicious_words_txt_file and msg.txt):
+
+robert@robert:~/Documents/CodingAssignment1$ python smsclientTCP.py robert 8591 msg.txt
+['smsclientTCP.py', 'robert', '8591', 'msg.txt']
+(3, 0.0731707317073, 3251 waitlist Georgia)
